@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Truck Sales</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="New folder/images.jpeg" alt="Truck Sales Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="store.html">Store</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="contact-hero">
+    <h1>Contact Us</h1>
+    <p>Looking to buy or sell a truck? Reach out to our sales team today!</p>
+  </section>
+
+  <!-- Contact Info + Form -->
+  <section class="contact-container">
+    <div class="contact-info">
+      <h2>Get in Touch</h2>
+      <p><i class="fas fa-map-marker-alt"></i> 45 USA — Golden Gate Bridge, San Francisco</p>
+      <p><i class="fas fa-phone"></i>  +234 703 062 14 22</p>
+      <p><i class="fas fa-envelope"></i> norahalex13@gmail.com</p>
+      <p><i class="fas fa-clock"></i> Mon - Sat: 8:00 AM - 6:00 PM</p>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send</button>
+      </form>
+      <p id="form-status"></p>
+    </div>
+  </section>
+
+  <!-- Google Map -->
+  <section class="map">
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3156.998979619467!2d-122.47825528468133!3d37.819932979751485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808587cba664b1b1%3A0xe4c2d2b14d5a2f0a!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1704901234567" 
+    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+  </iframe>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Truck Sales. All Rights Reserved.</p>
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Simple form status (no backend yet)
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      status.textContent = "✅ Message sent (demo only)";
+      form.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <header>
+                    <div class="logo">
+                        <img src="New folder/images.jpeg" alt="">
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="store.html">Store</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+            </header>
+
+  <main class="cart-page">
+    <div id="cart-list"></div>
+    <h3>Total: $<span id="checkout-total">0</span></h3>
+    <button id="checkout-btn">Proceed to Checkout</button>
+  </main>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+    const cartList = document.getElementById("cart-list");
+    cart.forEach(item => {
+      const div = document.createElement("div");
+      div.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+      cartList.appendChild(div);
+    });
+
+    document.getElementById("checkout-total").textContent = total.toFixed(2);
+
+    document.getElementById("checkout-btn").addEventListener("click", () => {
+      alert("✅ Checkout successful!");
+      localStorage.removeItem("cart");
+    });
+  </script>
+</body>
+</html>

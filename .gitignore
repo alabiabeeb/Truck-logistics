@@ -1,0 +1,9 @@
+# Ignore all video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Ignore OS/editor junk
+.DS_Store
+Thumbs.db
