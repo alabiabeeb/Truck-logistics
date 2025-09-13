@@ -10,19 +10,25 @@
 <body  >
 
   <!-- Header -->
-  <header>
-    <div class="logo">
-      <img src="New folder/images.jpeg" alt="Logo">
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="store.html" class="active">Store</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+ <header>
+  <div class="logo">
+    <img src="images/images.jpeg" alt="">
+  </div>
+
+  <!-- Hamburger button -->
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+
+  <nav id="navbar">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- Hero -->
   <section class="store-hero">
@@ -325,6 +331,13 @@ paymentForm.addEventListener("submit", (e) => {
   }, 3000);
 });
 
+    // Responsive Navbar Toggle
+  const menuToggle = document.getElementById("menu-toggle");
+  const navbar = document.getElementById("navbar");
+
+  menuToggle.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+  });
 </script>
 
 </body>

@@ -621,6 +621,12 @@ footer .socials a {
   background: #d35400;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
 
 /* Modal Background */
 .modal {
@@ -728,6 +734,42 @@ footer .socials a {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  header {
+ display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+  nav {
+    display: none;
+    width: 100%;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    background: rgba(0, 0, 8, 0.97);
+    width: 100%;
+  }
+
+  nav ul li {
+    border-bottom: 1px solid #333;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
   main {
     margin: 20px 15px;
     padding: 20px;
@@ -757,5 +799,137 @@ footer .socials a {
   }
   main {
     padding: 15px 15px;
+  }
+}
+
+
+/* ==================== Responsive Styles ==================== */
+
+/* Tablet view */
+@media (max-width: 1024px) {
+
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .hero_banner h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero_banner p {
+    font-size: 1.5rem;
+  }
+
+  .trucks-container,
+  .store-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 20px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  /* Base nav hidden on left */
+  nav {
+    position: fixed;
+    top: 0;
+    left: -250px;       /* push off screen */
+    width: 250px;
+    height: 100%;
+    background: rgba(0, 0, 8, 0.97);
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px; /* space below header */
+    transition: left 0.4s ease; /* smooth slide */
+    z-index: 999;
+  }
+
+  /* Show nav */
+  nav.active {
+    left: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  nav ul li {
+    border-bottom: 1px solid #333;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 15px;
+    width: 100%;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  /* Menu toggle button */
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+    z-index: 1001; /* above nav */
+  }
+
+  .hero_banner h1 {
+    font-size: 2rem;
+  }
+
+  .hero_banner p {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    width: auto; /* Avoid tiny button issue */
+    min-width: 120px;
+  }
+
+  .truck-listing h2,
+  .store-hero h1,
+  .contact-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-container {
+    padding: 20px;
+  }
+
+  .store-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hero_banner h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero_banner p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .truck-card h3 {
+    font-size: 1.1rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
   }
 }

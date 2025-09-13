@@ -11,18 +11,25 @@
 <body>
     
             <header>
-                    <div class="logo">
-                        <img src="New folder/images.jpeg" alt="">
-                    </div>
-                    <nav>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="store.html">Store</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-            </header>
+  <div class="logo">
+    <img src="images/images.jpeg" alt="">
+  </div>
+
+  <!-- Hamburger button -->
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+
+  <nav id="navbar">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
         <main>
   <section>
     <h2>Who We Are</h2>
@@ -62,6 +69,14 @@
       <a href="#"><i class="fab fa-twitter"></i></a>
     </div>
   </footer>
+  <script>
+    // Responsive Navbar Toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const navbar = document.getElementById("navbar");
 
+    menuToggle.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+  </script>
 </body>
 </html>
